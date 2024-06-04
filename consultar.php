@@ -1,5 +1,6 @@
 <?php
     require_once $_SERVER['DOCUMENT_ROOT'] . '/exemplo_banco_de_dados/controller/pessoaController.php';
+    //indica onde o arquivo deve buscar informações
 ?>
 
 <!DOCTYPE html>
@@ -23,11 +24,14 @@
             <tbody>
                 <?php
                     $pessoaController = new PessoaController();
+                    //cria o objeto pessoaControler de PessoaControler
                     $pessoas = $pessoaController->listar();
+                    //pessoas é recebe a função listar
                     foreach($pessoas as $pessoa) {
                         echo "<th>" . $pessoa['nome'] . "</th>";
                         echo "<th>" . $pessoa['telefone'] . "</th>";
                         echo "<th>" . $pessoa['celular'] . "</th>";
+                        //exibe as informações em uma tabela com foreach passando o vetor para todas as pessoas
                     }
                 ?>
             </tbody>
